@@ -9,12 +9,20 @@ import SceneKit
 
 class GameViewController: UIViewController {
     
+    // MARK: - Outlets
+    let label = UILabel()
+    
+    
     // MARK: - Properties
     var ship: SCNNode!
     var score = 0
     var duration : TimeInterval = 5
     
     // MARK: - Methods
+    func addLabel () {
+        
+    }
+    
     func addShip() {
         //move ship father from
         let x = Int.random(in: -25...25)
@@ -32,8 +40,6 @@ class GameViewController: UIViewController {
             print(#line, #function, "Game over")
         }
         
-        // retrieve the SCNView
-        let scnView = self.view as! SCNView
         
         //add ship to the scene
         scnView.scene?.rootNode.addChildNode(ship)
@@ -52,9 +58,7 @@ class GameViewController: UIViewController {
     }
     
     func removeShip() {
-        // retrieve the SCNView
-        let scnView = self.view as! SCNView
-        
+    
         //remove the ship
         scnView.scene?.rootNode.childNode(withName: "ship", recursively: true)?.removeFromParentNode()
     }
@@ -94,9 +98,7 @@ class GameViewController: UIViewController {
         // animate the 3d object
 //         ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
         
-        // retrieve the SCNView
-        let scnView = self.view as! SCNView
-        
+    
         // set the scene to the view
         scnView.scene = scene
         
@@ -126,8 +128,6 @@ class GameViewController: UIViewController {
     
     @objc
     func handleTap(_ gestureRecognize: UIGestureRecognizer) {
-        // retrieve the SCNView
-        let scnView = self.view as! SCNView
         
         // check what nodes are tapped
         let p = gestureRecognize.location(in: scnView)
@@ -161,13 +161,17 @@ class GameViewController: UIViewController {
             SCNTransaction.commit()
         }
     }
+    // MARK: - Computed Properties
+    var scnView : SCNView {
+        self.view as! SCNView
+    }
     
     override var shouldAutorotate: Bool {
-        return true
+        true
     }
     
     override var prefersStatusBarHidden: Bool {
-        return true
+        true
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
