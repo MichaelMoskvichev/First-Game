@@ -15,12 +15,23 @@ class GameViewController: UIViewController {
     
     // MARK: - Properties
     var ship: SCNNode!
-    var score = 0
+    var score = 0 {
+    //установка наблюдателя
+        didSet {
+            label.text = "Score: \(score)"
+        }
+    }
     var duration : TimeInterval = 5
+    
     
     // MARK: - Methods
     func addLabel () {
-        
+        label.font = UIFont.systemFont(ofSize: 30)
+        label.numberOfLines = 2
+        label.frame = CGRect(x: 0, y: 0, width: scnView.frame.width, height: 100)
+        label.textAlignment = .center
+        scnView.addSubview(label)
+        score = 0
     }
     
     func addShip() {
@@ -36,6 +47,10 @@ class GameViewController: UIViewController {
         // Animate ship movmet toward camera
         ship.runAction(.move(to: SCNVector3(), duration: duration)) {
             self.ship.removeFromParentNode()
+            
+            DispatchQueue.main.async {
+                self.label.text = "Game over\nScore : \(self.score)"
+            }
             
             print(#line, #function, "Game over")
         }
@@ -123,6 +138,9 @@ class GameViewController: UIViewController {
         
         // add ship
         addShip()
+        
+        // add label
+        addLabel()
         
     }
     
