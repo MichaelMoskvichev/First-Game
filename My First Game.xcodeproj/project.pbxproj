@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74B993BB26F865C200992DB3 /* Screenshot01.png in Resources */ = {isa = PBXBuildFile; fileRef = 74B993B926F865C200992DB3 /* Screenshot01.png */; };
+		74B993BC26F865C200992DB3 /* Screenshot02.png in Resources */ = {isa = PBXBuildFile; fileRef = 74B993BA26F865C200992DB3 /* Screenshot02.png */; };
 		74F1E5BB2544620C00213825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1E5BA2544620C00213825 /* AppDelegate.swift */; };
 		74F1E5BD2544620C00213825 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 74F1E5BC2544620C00213825 /* art.scnassets */; };
 		74F1E5BF2544620C00213825 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1E5BE2544620C00213825 /* GameViewController.swift */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		74B993B926F865C200992DB3 /* Screenshot01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot01.png; sourceTree = "<group>"; };
+		74B993BA26F865C200992DB3 /* Screenshot02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot02.png; sourceTree = "<group>"; };
 		74F1E5B72544620C00213825 /* My First Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My First Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F1E5BA2544620C00213825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74F1E5BC2544620C00213825 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -35,9 +39,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74B993BD26F865D400992DB3 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				74B993B926F865C200992DB3 /* Screenshot01.png */,
+				74B993BA26F865C200992DB3 /* Screenshot02.png */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		74F1E5AE2544620C00213825 = {
 			isa = PBXGroup;
 			children = (
+				74B993BD26F865D400992DB3 /* Screenshots */,
 				74F1E5B92544620C00213825 /* My First Game */,
 				74F1E5B82544620C00213825 /* Products */,
 			);
@@ -123,6 +137,8 @@
 			files = (
 				74F1E5BD2544620C00213825 /* art.scnassets in Resources */,
 				74F1E5C42544620D00213825 /* Assets.xcassets in Resources */,
+				74B993BB26F865C200992DB3 /* Screenshot01.png in Resources */,
+				74B993BC26F865C200992DB3 /* Screenshot02.png in Resources */,
 				74F1E5C22544620C00213825 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
